@@ -26,6 +26,8 @@ this.prototype.destroy= ()=>datos.pop();
 
 }
 
+LIFO
+
 */
 
 
@@ -40,7 +42,7 @@ class Stack {
 
     public function add($item){
         if (count($this->stack) < $this->limit){
-            array_unshift($this->stack, $item);
+            array_push($this->stack, $item);
         }else{
             echo 'Stack is full and cannot add any more items';
         }
@@ -50,7 +52,7 @@ class Stack {
         if ($this->isEmpty()){
             echo "Stack is empty";
         }else{
-            return array_shift($this->stack);
+            return array_pop($this->stack);
         }
     }
 
@@ -71,13 +73,15 @@ queue.prototype.enqueue = value => cola.push(value);
 queue.prototype.dequeue = ()=> cola.shift()
 queue.prototype.size = () => cola.length()
 
+FIFO 
+
 */
 
 class Queue {
     private $queue = array();
 
     public function enqueue($value) {
-        array_push($this->queue, $value);
+        array_unshift($this->queue, $value);
     }
 
     public function dequeue() {
